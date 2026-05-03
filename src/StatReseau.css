@@ -1,0 +1,25 @@
+.stat-reseau {
+  display: flex;
+  justify-content: space-around;
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-item h3 {
+  font-size: 2rem;
+  color: #0a6e31;
+  margin: 0;
+}
+
+.stat-item p {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  margin: 5px 0 0 0;
+}
