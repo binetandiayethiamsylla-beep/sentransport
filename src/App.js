@@ -9,6 +9,7 @@ import Footer from './Footer';
 function App() {
   const [recherche, setRecherche] = useState("");
   const [ligneSelectionnee, setLigneSelectionnee] = useState(null);
+  const [compteur, setCompteur] = useState(0);
 
   const lignes = [
     { id: 1, numero: "1", depart: "Parcelles Assainies", arrivee: "Plateau", arrets: 14, couleur: "#e74c3c",
@@ -43,10 +44,22 @@ function App() {
     <div className="App">
       <Header />
       <main className="contenu">
-        <Recherche valeur={recherche} onChange={setRecherche} />
+        <p className="compteur-recherche">
+          Vous avez effectué {compteur} recherche{compteur > 1 ? 's' : ''}
+        </p>
+        <Recherche
+          valeur={recherche}
+          onChange={(valeur) => {
+            setRecherche(valeur);
+            setCompteur(compteur + 1);
+          }}
+        />
         <p className="resultat-recherche">
           {lignesFiltrees.length} ligne{lignesFiltrees.length > 1 ? 's' : ''} trouvee{lignesFiltrees.length > 1 ? 's' : ''}
         </p>
+        {lignesFiltrees.length === 0 && (
+          <p className="aucun-resultat">Aucune ligne trouvée</p>
+        )}
         {lignesFiltrees.map(ligne => (
           <LigneBus
             key={ligne.id}

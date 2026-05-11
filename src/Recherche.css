@@ -20,3 +20,21 @@
 .recherche-input::placeholder {
   color: #b2bec3;
 }
+.recherche {
+  display: flex;
+  gap: 10px;
+}
+
+.recherche-bouton {
+  padding: 12px 16px;
+  background-color: #0a6e31;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.recherche-bouton:hover {
+  background-color: #085a28;
+}
